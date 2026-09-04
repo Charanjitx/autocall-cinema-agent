@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#101b28" />
+    <title>Autocall — Daily Call Sheet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Autocall home">
+          <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span>AUTOCALL</span>
+        </a>
+        <div class="topbar-note"><span class="status-dot"></span> Production desk <span class="topbar-divider"></span> Draft mode</div>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="eyebrow">SCREENPLAY INTELLIGENCE <span>✦</span></div>
+          <h1>From script to <em>set.</em></h1>
+          <p class="hero-copy">Turn a screenplay into the clear, practical call sheet your crew needs to make the day.</p>
+        </section>
+
+        <section class="workspace" aria-label="Screenplay analyzer">
+          <div class="script-panel panel">
+            <div class="panel-heading">
+              <div>
+                <div class="section-kicker">01 / SOURCE SCRIPT</div>
+                <h2>Drop in your screenplay</h2>
+              </div>
+              <span class="file-badge">TXT / FDX / PDF TEXT</span>
+            </div>
+            <label class="sr-only" for="screenplay">Screenplay text</label>
+            <textarea id="screenplay" placeholder="Paste screenplay text here…" spellcheck="false"></textarea>
+            <div class="editor-footer">
+              <span id="character-count">0 characters</span>
+              <button id="sample-button" class="text-button" type="button"><span aria-hidden="true">↗</span> Load sample script</button>
+            </div>
+            <button id="analyze-button" class="primary-button" type="button">
+              <span class="button-label">Build my call sheet</span>
+              <span class="button-loading" aria-hidden="true"><span class="spinner"></span> Reading the script…</span>
+              <span class="arrow" aria-hidden="true">→</span>
+            </button>
+            <p class="privacy-note"><span aria-hidden="true">⌁</span> Your script is used only for this analysis and is never shown in the browser logs.</p>
+          </div>
+
+          <aside class="tip-panel">
+            <div class="tip-icon" aria-hidden="true">✦</div>
+            <div>
+              <div class="section-kicker">A BETTER FIRST AD</div>
+              <h3>Give your team a head start.</h3>
+              <p>Autocall finds the details that get lost between the lines: who is needed, when they report, and what must be on set.</p>
+            </div>
+            <div class="tip-line"></div>
+            <div class="tip-meta"><span>EST. READ TIME</span><strong>under 30 sec</strong></div>
+          </aside>
+        </section>
+
+        <div id="error-banner" class="error-banner" role="alert" hidden>
+          <span class="error-symbol" aria-hidden="true">!</span>
+          <div><strong>We couldn't build that call sheet.</strong><span id="error-message"></span></div>
+          <button id="dismiss-error" type="button" aria-label="Dismiss error">×</button>
+        </div>
+
+        <section id="results" class="results" aria-live="polite" hidden>
+          <div class="results-heading">
+            <div>
+              <div class="section-kicker">02 / DAILY CALL SHEET</div>
+              <h2>Tomorrow on set</h2>
+            </div>
+            <div class="results-actions">
+              <span id="result-status" class="result-status"><span class="status-dot"></span> Analysis ready</span>
+              <button id="new-analysis" class="outline-button" type="button">New analysis <span aria-hidden="true">↗</span></button>
+            </div>
+          </div>
+
+          <div id="metrics" class="metrics"></div>
+
+          <div class="sheet-toolbar">
+            <div class="toolbar-title"><span class="mini-grid" aria-hidden="true">▦</span> Scene breakdown</div>
+            <label class="search-box">
+              <span aria-hidden="true">⌕</span>
+              <input id="scene-search" type="search" placeholder="Search scenes, cast, props…" />
+            </label>
+          </div>
+          <div id="scene-list" class="scene-list"></div>
+          <div id="empty-filter" class="empty-filter" hidden>No scenes match that search.</div>
+        </section>
+
+        <section id="welcome-state" class="welcome-state">
+          <div class="welcome-rule"></div>
+          <p>Paste a screenplay above to map out your next shooting day.</p>
+          <div class="welcome-mark" aria-hidden="true">✦</div>
+        </section>
+      </main>
+      <footer class="footer"><span>Autocall</span><span>Made for the people who make the picture.</span><span>v0.1</span></footer>
+    </div>
+    <script src="/static/app.js"></script>
+  </body>
+</html>

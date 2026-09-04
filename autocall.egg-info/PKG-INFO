@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: autocall
+Version: 0.1.0
+Summary: Screenplay-to-call-sheet assistant for film production teams
+Requires-Python: >=3.11
+Requires-Dist: fastapi>=0.115.0
+Requires-Dist: google-genai>=1.0.0
+Requires-Dist: httpx>=0.28.1
+Requires-Dist: pydantic>=2.8.0
+Requires-Dist: pytest>=9.1.1
+Requires-Dist: uvicorn[standard]>=0.30.0
+Provides-Extra: test
+Requires-Dist: httpx>=0.27.0; extra == "test"
+Requires-Dist: pytest>=8.0.0; extra == "test"

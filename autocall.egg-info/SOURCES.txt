@@ -1,0 +1,12 @@
+README.md
+pyproject.toml
+app/__init__.py
+app/gemini_service.py
+app/main.py
+app/models.py
+autocall.egg-info/PKG-INFO
+autocall.egg-info/SOURCES.txt
+autocall.egg-info/dependency_links.txt
+autocall.egg-info/requires.txt
+autocall.egg-info/top_level.txt
+tests/test_app.py
