@@ -22,7 +22,7 @@ Autocall turns screenplay text into a practical daily call sheet for a film prod
 
 Optional configuration:
 
-- `GEMINI_MODEL` changes the model name; the default is `gemini-2.5-flash`.
+- `GEMINI_MODEL` can select `gemini-2.5-flash`, `gemini-1.5-flash`, or `gemini-3.6-flash`; the default is `gemini-2.5-flash`. If Gemini reports that the preferred model is unavailable to the key, Autocall retries with the other supported Flash models.
 
 ## API
 
